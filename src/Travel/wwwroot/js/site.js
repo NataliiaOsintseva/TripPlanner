@@ -1,15 +1,35 @@
 // site.js
 
-(function startup() {
-    var ele = document.getElementById("username");
-    ele.innerHTML = "Vadya";
+(function () {
 
-    var main = document.getElementById("main");
-    main.onmouseenter = function () {
-        main.style["background-color"] = "#888";
-    };
+    //var ele = $("#username");
+    //ele.text("Vadya");
 
-    main.onmouseleave = function () {
-        main.style["background-color"] = "";
-    };
+
+    //var main = $("#main");
+    //main.on("mouseenter", function () {
+    //    main.style = "background-color: #888;";
+    //});
+
+    //main.on('mouseleave', function () {
+    //    main.style = "";
+    //});
+
+    //var menuItems = $("ul.menu li a");
+    //menuItems.on("click", function () {
+    //    var me = $(this);
+    //    alert(me.text());
+    //});
+
+    var $sideBarAndWrapper = $("#sidebar, #wrapper");
+
+    $("#sidebarToggle").on("click", function () {
+        $sideBarAndWrapper.toggleClass("hide-sidebar");
+        if ($sideBarAndWrapper.hasClass("hide-sidebar")) {
+            $(this).text("Show Sidebar");
+        } else {
+            $(this).text("Hide Sidebar");
+        }
+    })
+
 })();
